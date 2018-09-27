@@ -11,7 +11,7 @@
 " This script incorrectly recognizes some junk input as numerals:
 " parsing the complete system of Scheme numerals using the pattern
 " language is practically impossible: I did a lax approximation.
- 
+
 " MzScheme extensions can be activated with setting is_mzscheme variable
 " Gauche extensions can be activated with setting is_gauche variable
 
@@ -220,7 +220,7 @@ if exists("b:is_mzscheme") || exists("is_mzscheme")
     syn keyword schemeExtSyntax free-identifier=? bound-identifier=? module-identifier=? syntax-object->datum
     syn keyword schemeExtSyntax datum->syntax-object
     syn keyword schemeExtSyntax let-values let*-values letrec-values set!-values fluid-let parameterize begin0
-    syn keyword schemeExtSyntax error raise opt-lambda define-values unit unit/sig define-signature 
+    syn keyword schemeExtSyntax error raise opt-lambda define-values unit unit/sig define-signature
     syn keyword schemeExtSyntax invoke-unit/sig define-values/invoke-unit/sig compound-unit/sig import export
     syn keyword schemeExtSyntax link syntax quasisyntax unsyntax with-syntax
 
@@ -244,7 +244,7 @@ if exists("b:is_mzscheme") || exists("is_mzscheme")
     syn keyword schemeExtFunc exn:i/o:tcp? exn:i/o:udp? exn:misc? exn:misc:application? exn:misc:unsupported? exn:module? exn:read? exn:read:non-char?
     syn keyword schemeExtFunc exn:special-comment? exn:syntax? exn:thread? exn:user? exn:variable? exn:application:mismatch?
     " Command-line parsing
-    syn keyword schemeExtFunc command-line current-command-line-arguments once-any help-labels multi once-each 
+    syn keyword schemeExtFunc command-line current-command-line-arguments once-any help-labels multi once-each
 
     " syntax quoting, unquoting and quasiquotation
     syn region schemeUnquote matchgroup=Delimiter start="#," end=![ \t\[\]()";]!me=e-1 contains=ALL
@@ -276,7 +276,7 @@ if exists("b:is_chicken") || exists("is_chicken")
 
     " here-string
     syn region schemeString start=+#<<\s*\z(.*\)+ end=+^\z1$+
- 
+
     if filereadable(expand("<sfile>:p:h")."/cpp.vim")
 	unlet! b:current_syntax
 	syn include @ChickenC <sfile>:p:h/cpp.vim
@@ -295,7 +295,7 @@ if exists("b:is_chicken") || exists("is_chicken")
 
     " suggested by Alex Queiroz
     syn match schemeExtSyntax oneline    "#![-a-z!$%&*/:<=>?^_~0-9+.@#%]\+"
-    syn region schemeString start=+#<#\s*\z(.*\)+ end=+^\z1$+ 
+    syn region schemeString start=+#<#\s*\z(.*\)+ end=+^\z1$+
 endif
 
 
